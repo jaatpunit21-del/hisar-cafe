@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Format zone readable name
       let zoneName = "Cozy Corner";
-      if (zone === "study") zoneName = "Quiet Study Nook (with Power Outlet)";
-      else if (zone === "lounge") zoneName = "Social Coffee Lounge (Sofas)";
-      else if (zone === "library") zoneName = "The Book Library Corner";
-      else if (zone === "group") zoneName = "Group Discussion Table (4-6 persons)";
+      if (zone === "lounge") zoneName = "Cozy Vintage Lounge (Sofa Seating)";
+      else if (zone === "garden") zoneName = "Open-Air Garden Patio (Ambient Lights)";
+      else if (zone === "dining") zoneName = "Main Family Dining Hall";
+      else if (zone === "private") zoneName = "Private Party Lounge Deck (10-15 persons)";
 
       // Generate a random booking reference code e.g., CN-8274
       const bookingCode = `CN-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
         createdAt: new Date().toISOString()
       };
 
-      let existingReservations = JSON.parse(localStorage.getItem("coffee_nation_bookings") || "[]");
+      let existingReservations = JSON.parse(localStorage.getItem("tamas_lounge_bookings") || "[]");
       existingReservations.push(reservation);
-      localStorage.setItem("coffee_nation_bookings", JSON.stringify(existingReservations));
+      localStorage.setItem("tamas_lounge_bookings", JSON.stringify(existingReservations));
 
       // Display Details in success panel
       document.getElementById("success-code").textContent = bookingCode;
